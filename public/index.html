@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Location Monitor - Realtime Tracking Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>📍 Location Monitor</h1>
+        <div class="subtitle">Pantau lokasi &amp; kecepatan device secara realtime</div>
+      </div>
+
+      <div class="pair-section">
+        <label for="pairCode">Tambah Device via Pairing Code</label>
+        <div class="input-row">
+          <input
+            id="pairCode"
+            type="text"
+            placeholder="Contoh: DEV-1234"
+            maxlength="14"
+            autocomplete="off"
+          />
+          <button id="pairBtn" class="btn btn-primary">Tambah Device</button>
+        </div>
+      </div>
+
+      <div id="deviceList" class="device-list">
+        <div class="empty-hint">
+          <span class="icon">🗺️</span>
+          Belum ada device yang ditambahkan.<br/>
+          Masukkan Pairing Code untuk mulai memantau.
+        </div>
+      </div>
+    </aside>
+
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/monitor.js"></script>
+</body>
+</html>
